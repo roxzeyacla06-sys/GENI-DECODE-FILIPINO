@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENI-DECODE | Magical Word Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="logo">✨ GENI-DECODE</div>
+    <button class="sound-toggle" onclick="toggleSound()">
+        🔊 Audio On
+    </button>
+</header>
+
+<
+<!-- WELCOME PAGE -->
+<section id="home" class="page active">
+
+    <div class="welcome-content">
+
+        <div class="welcome-badge">
+            ✨ ISANG MAHIWAGANG PAGLALAKBAY SA PAGBASA ✨
+        </div>
+
+        <div class="characters">
+
+            <div class="character-card mira-card">
+                <div class="character-avatar mira">🧒🏻</div>
+                <h3>MIRA</h3>
+                <p>Ang iyong Word Explorer!</p>
+            </div>
+
+            <div class="character-card tiko-card">
+                <div class="character-avatar tiko">🐉</div>
+                <h3>TIKO</h3>
+                <p>Ang iyong Reading Buddy!</p>
+            </div>
+
+        </div>
+
+        <p class="small-title">WELCOME, LITTLE EXPLORER!</p>
+
+        <h1>
+            GENI-DECODE
+            <span class="hero-subtitle">The Magical Word Explorer</span>
+        </h1>
+
+        <p class="intro">
+            Kumusta, batang explorer!
+            Samahan sina Mira at Tiko sa isang mahiwagang
+            paglalakbay. Tuklasin ang mga letra, pakinggan
+            ang kanilang mga tunog, pagsamahin ang mga pantig,
+            at basahin ang mga salita!
+        </p>
+
+        <div class="learning-highlights">
+
+            <div class="highlight-item">
+                <span>🔤</span>
+                <p>Kilalanin ang mga Letra</p>
+            </div>
+
+            <div class="highlight-item">
+                <span>🔊</span>
+                <p>Tuklasin ang mga Tunog</p>
+            </div>
+
+            <div class="highlight-item">
+                <span>📚</span>
+                <p>Matutong Bumasa</p>
+            </div>
+
+        </div>
+
+        <button class="main-button" onclick="startAdventure()">
+            SIMULAN ANG PAKIKIPAGSAPALARAN 🚀
+        </button>
+
+        <button class="audio-button" onclick="speakWelcome()">
+            🔊 Pakinggan ang Panimula
+        </button>
+
+        <p class="welcome-footer">
+            ⭐ Mag-isip • Matuto • Magbasa • Magsaya! ⭐
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- MAGICAL ISLAND MAP -->
+<section id="map" class="page">
+
+    <div class="map-heading">
+        <span class="map-label">🗺️ ANG IYONG ADVENTURE MAP</span>
+        <h1>Ang Apat na Mahiwagang Isla</h1>
+        <p>
+            Handa ka na bang maging Word Explorer?
+            Piliin ang isang isla at simulan ang iyong hamon!
+        </p>
+    </div>
+
+    <div class="map-progress">
+        <div class="progress-star">⭐</div>
+        <div>
+            <span>Iyong mga Bituin</span>
+            <strong id="starCount">0</strong>
+        </div>
+    </div>
+
+    <div class="island-grid">
+
+        <!-- ISLAND 1 -->
+        <div class="island-card island-one">
+            <div class="island-number">ISLA 1</div>
+            <div class="island-picture">🔤</div>
+            <h2>Letter Land</h2>
+            <p class="island-subtitle">Ang Isla ng mga Letra</p>
+            <p class="island-description">
+                Kilalanin ang malaki at maliit na titik.
+                Hanapin ang magkaparehang letra!
+            </p>
+            <div class="island-skill">✨ Pagkilala sa Letra</div>
+            <button onclick="openActivity(0)">
+                SIMULAN ANG HAMON →
+            </button>
+        </div>
+
+        <!-- ISLAND 2 -->
+        <div class="island-card island-two">
+            <div class="island-number">ISLA 2</div>
+            <div class="island-picture">🔊</div>
+            <h2>Sound Forest</h2>
+            <p class="island-subtitle">Ang Gubat ng mga Tunog</p>
+            <p class="island-description">
+                Makinig nang mabuti at tukuyin
+                ang unang tunog ng mga salita!
+            </p>
+            <div class="island-skill">✨ Pagkilala sa Tunog</div>
+            <button onclick="openActivity(1)">
+                SIMULAN ANG HAMON →
+            </button>
+        </div>
+
+        <!-- ISLAND 3 -->
+        <div class="island-card island-three">
+            <div class="island-number">ISLA 3</div>
+            <div class="island-picture">🏰</div>
+            <h2>Syllable Castle</h2>
+            <p class="island-subtitle">Ang Kastilyo ng mga Pantig</p>
+            <p class="island-description">
+                Pagsamahin ang mga pantig at
+                bumuo ng mga bagong salita!
+            </p>
+            <div class="island-skill">✨ Pagbuo ng Salita</div>
+            <button onclick="openActivity(2)">
+                SIMULAN ANG HAMON →
+            </button>
+        </div>
+
+        <!-- ISLAND 4 -->
+        <div class="island-card island-four">
+            <div class="island-number">ISLA 4</div>
+            <div class="island-picture">📖</div>
+            <h2>Word Adventure</h2>
+            <p class="island-subtitle">Ang Mundo ng mga Salita</p>
+            <p class="island-description">
+                Basahin, unawain, at gamitin
+                ang mga salitang iyong natutuhan!
+            </p>
+            <div class="island-skill">✨ Pagbasa ng Salita</div>
+            <button onclick="openActivity(3)">
+                SIMULAN ANG HAMON →
+            </button>
+        </div>
+
+    </div>
+
+    <div class="map-message">
+        <span>🐉</span>
+        <p>
+            Huwag mag-alala kung mahirap ang hamon.
+            Si Tiko ay laging handang tumulong sa iyo!
+        </p>
+    </div>
+
+    <button class="back-button map-back" onclick="goHome()">
+        ← Bumalik sa Simula
+    </button>
+
+</section>
+
+
+
+<!-- ACTIVITY PAGE -->
+<section id="activity" class="page">
+
+    <div class="activity-header">
+        <button onclick="goMap()" class="back-button">
+            ← Bumalik sa Mapa
+        </button>
+
+        <div id="islandName"></div>
+        <div id="questionProgress"></div>
+    </div>
+
+    <div class="activity-container">
+
+        <div class="guide">
+    <div class="guide-character">🐉</div>
+    <div class="guide-message">
+        <strong>🐉 Mira says:</strong>
+        <p id="guideText">
+            Kumusta, batang explorer! Welcome sa Letter Land!
+            Dito, kikilalanin natin ang mga letra ng alpabeto.
+            Tingnan nang mabuti ang bawat letra at piliin ang tamang sagot.
+            Handa ka na ba? Tara na at maglaro habang natututo!
+        </p>
+        <button onclick="repeatInstruction()" class="audio-button">
+            🔊 Pakinggan muli
+        </button>
+    </div>
+</div>
+
+        
+            <div class="instruction-space">
+    <strong>🐉 Mira says:</strong>
+    <p id="miraDialogue">
+        Kumusta, batang explorer! Welcome sa Letter Land!
+        Dito, kikilalanin natin ang mga letra ng alpabeto.
+        Tingnan nang mabuti ang bawat letra at piliin ang tamang sagot.
+        Handa ka na ba? Tara na at maglaro habang natututo!
+    </p>
+
+    <button onclick="repeatInstruction()" class="audio-button">
+        🔊 Pakinggan muli
+    </button>
+</div>
+
+            <div id="questionNumber"></div>
+
+            <div id="questionImage" class="question-image">
+                🌟
+            </div>
+
+            <h2 id="questionText"></h2>
+
+            <div id="audioQuestion"></div>
+
+            <div id="choices" class="choices"></div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <button id="nextButton"
+                    class="main-button hidden"
+                    onclick="nextQuestion()">
+                SUSUNOD →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMPLETION PAGE -->
+<section id="complete" class="page">
+
+    <div class="completion-card">
+
+        <div class="celebration">🎉🌟🏆</div>
+
+        <h1>Mahusay, Little Explorer!</h1>
+
+        <p>
+            Natapos mo ang iyong mahiwagang paglalakbay!
+            Ipinakita mo ang iyong husay sa pagkilala ng
+            mga letra, tunog, pantig, at salita.
+        </p>
+
+        <h2 id="finalStars">⭐ 0 Stars</h2>
+
+        <button class="main-button" onclick="goMap()">
+            BALIK SA MAPA
+        </button>
+
+        <button class="audio-button" onclick="speakCongratulations()">
+            🔊 Pakinggan ang Mensahe
+        </button>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+<audio id="miraWelcomeAudio" src="mira-welcome.mp3"></audio>
+<audio id="miraLetterLandAudio" src="mira-letter-land.mp3"></audio>
+<audio id="miraSoundForestAudio" src="mira-sound-forest.mp3"></audio>
+</body>
+</html>
